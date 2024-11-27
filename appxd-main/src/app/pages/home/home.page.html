@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; font-weight: bold;">
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>
+        Bienvenido 👋
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Contenedor de botones -->
+  <div class="button-container">
+    <!-- Botón para ver viajes disponibles -->
+    <ion-button
+      expand="block"
+      size="large"
+      routerLink="/lista-viajes"
+      class="custom-button available-trips"
+    >
+      Viajes Disponibles
+    </ion-button>
+
+    <!-- Botón para programar un viaje -->
+    <ion-button
+      expand="block"
+      size="large"
+      routerLink="/programar-viaje"
+      class="custom-button schedule-trip"
+    >
+      Programar Viaje
+    </ion-button>
+  </div>
+</ion-content>

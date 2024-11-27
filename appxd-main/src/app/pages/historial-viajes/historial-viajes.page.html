@@ -1,0 +1,82 @@
+<ion-content class="ion-padding fondo-historial" style="background: linear-gradient(to bottom, #3A6073, #16222A); color: white;">
+
+  <div class="contenedor-historial" style="display: flex; justify-content: center; align-items: center; height: 100%; padding-top: 20px;">
+
+    <!-- Tarjeta de historial -->
+    <ion-card class="tarjeta-historial" style="width: 90%; max-width: 500px; border-radius: 15px; background: #364F6B; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);">
+      <ion-card-header style="text-align: center; background: #2C5364; padding: 20px; border-radius: 15px 15px 0 0;">
+        <ion-card-title style="font-size: 1.6em; font-weight: bold; color: white;">
+          Historial de viajes
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content style="padding: 20px; color: white;">
+        <ion-list>
+          <ion-item *ngFor="let viaje of viajes" style="background: #2C5364; margin-bottom: 15px; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; display: flex; flex-direction: column;">
+            
+            <!-- Reorganización de los campos -->
+            <ion-label style="color: #b0c4de; display: flex; flex-direction: column;">
+              <div style="margin-bottom: 10px;">
+                <h2 style="font-size: 1.2em; font-weight: bold;">Fecha: {{ viaje.fecha | date: 'dd/MM/yyyy' }}</h2>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <p style="font-size: 1em;">Chofer: <strong>{{ viaje.chofer }}</strong></p>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <p style="font-size: 1em;">Patente: <strong>{{ viaje.patente }}</strong></p>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <p style="font-size: 1em;">Costo: <strong>${{ viaje.costo }}</strong></p>
+              </div>
+            </ion-label>
+
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+<style>
+  /* Mejoras de diseño */
+  .tarjeta-historial {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tarjeta-historial:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  ion-item {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+
+  ion-item:hover {
+    background: #3A6073;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  ion-label h2 {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  ion-label p {
+    color: #b0c4de;
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+
+  /* Contenedor del historial */
+  .contenedor-historial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

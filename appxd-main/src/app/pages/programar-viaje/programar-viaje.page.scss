@@ -1,0 +1,106 @@
+:root {
+    /* Colores para modo claro */
+    --color-fondo: linear-gradient(to bottom, #ffffff, #f7f9fc);
+    --color-tarjeta: #ffffff;
+    --color-texto: #333333;
+    --color-placeholder: #a1a1a1;
+    --color-boton: #4e73df;
+    --color-boton-hover: #3a5bb5;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Colores para modo oscuro */
+      --color-fondo: linear-gradient(to bottom, #3A6073, #16222A);
+      --color-tarjeta: #1f2a38;
+      --color-texto: #e9ecef;
+      --color-placeholder: #b0c4de;
+      --color-boton: #365bcd;
+      --color-boton-hover: #2a4c9f;
+    }
+  }
+  
+  /* Fondo general */
+  .fondo-programar {
+    background: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Contenedor principal */
+  .contenedor-programar {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Estilo de la tarjeta */
+  .tarjeta-programar {
+    width: 100%;
+    background-color: var(--color-tarjeta);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  /* Encabezado */
+  .tarjeta-programar ion-card-header {
+    text-align: center;
+    background: var(--color-boton);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 15px;
+  }
+  
+  .tarjeta-programar ion-card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  /* Campos del formulario */
+  .campo-input {
+    margin-bottom: 15px;
+    background: var(--color-tarjeta);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .campo-input ion-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto);
+  }
+  
+  .campo-input ion-input,
+  .campo-input ion-datetime {
+    color: var(--color-texto);
+    font-size: 0.95rem;
+  }
+  
+  .campo-input ion-input::placeholder {
+    color: var(--color-placeholder);
+  }
+  
+  /* Botón */
+  .boton-confirmar {
+    background-color: var(--color-boton);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .boton-confirmar:hover {
+    background-color: var(--color-boton-hover);
+    transform: translateY(-2px);
+  }
+  

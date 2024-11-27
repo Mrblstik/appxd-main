@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Viajes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-viajes">
+  <!-- Lista de Viajes -->
+  <ion-grid class="contenedor-viajes">
+    <ion-row>
+      <ion-col size-md="6" size-sm="12" *ngFor="let viaje of viajes" class="viaje-col">
+        <ion-card class="tarjeta-viaje">
+          <ion-card-header class="header-viaje">
+            <ion-card-title>{{ viaje?.destino }}</ion-card-title>
+            <ion-card-subtitle></ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div class="detalles-viaje">
+              <p><strong>Salida:</strong> {{ viaje?.horaSalida | date: 'dd/MM/yyyy, hh:mm a' }}</p>
+              <p><strong>Asientos disponibles:</strong> {{ viaje?.asientos }}</p>
+            </div>
+
+            <!-- Costo -->
+            <ion-item lines="none" class="costo-item">
+              <ion-label>Costo</ion-label>
+              <span>{{ viaje?.costo }}</span>
+            </ion-item>
+          </ion-card-content>
+
+          <!-- Botones -->
+          <ion-footer class="footer-viaje">
+            <ion-button expand="block" class="btn-confirmar" (click)="verViaje(viaje.id)">
+              Confirmar Viaje
+            </ion-button>
+            <ion-button expand="block" class="btn-chat" (click)="irAlChat(viaje.id)">
+              Ir al chat
+            </ion-button>
+          </ion-footer>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

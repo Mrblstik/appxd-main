@@ -1,0 +1,60 @@
+:root {
+    --button-width: 80%;
+    --button-height: 60px;
+    --button-border-radius: 12px;
+    --card-background-light: #f0f4f8;
+    --card-background-dark: #1e1e2f;
+    --button-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  ion-card.welcome-card {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background: var(--ion-card-background, var(--card-background-light));
+    border-radius: 15px;
+    box-shadow: var(--button-shadow);
+  }
+  
+  ion-card-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--ion-text-color, #3a6073);
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .custom-button {
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: var(--button-border-radius);
+    box-shadow: var(--button-shadow);
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .custom-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .custom-button.available-trips {
+    background: var(--ion-color-success, #4caf50);
+    color: white;
+  }
+  
+  .custom-button.schedule-trip {
+    background: var(--ion-color-primary, #2196f3);
+    color: white;
+  }
+  
+  ion-content {
+    --background: var(--ion-background-color);
+  }
+  
